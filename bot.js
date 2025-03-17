@@ -5,7 +5,7 @@ const axios = require('axios');
 
 // Bot configuration
 // by hiyaok
-const TOKEN = '8150553743:AAHk2aac32xLL9erzl1l2a1EQO7_Xqmy1TU';
+const TOKEN = '7557221405:AAHB48w9Kjrnw3NtdtIq5jtM3Jh2c8e3wvw';
 const SHEET_ID = '1rk1d5MQByRpUz6WPyZRqBJp3QYeiv_vQF1NnR2M2gNQ';
 const SHEET_NAME = 'Sheet1';
 
