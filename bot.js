@@ -60,8 +60,8 @@ async function generateHelpMessage() {
   helpMessage += "/start - Perintah untuk memulai bot.\n";
   
   // Add standard marketplace commands
-  helpMessage += "/mustang303 - Perintah untuk link marketplace mustang303.\n";
   helpMessage += "/jaguar33 - Perintah untuk link marketplace jaguar33.\n";
+  helpMessage += "/mustang303 - Perintah untuk link marketplace mustang303.\n";
   helpMessage += "/qqfullbet - Perintah untuk link marketplace qqfullbet.\n";
   helpMessage += "/idn33 - Perintah untuk link marketplace idn33.\n";
   
@@ -90,11 +90,11 @@ async function generateCategoryResponse(category) {
       response += `${count}. ${category.toUpperCase()}\n`;
       
       // Add links from all available marketplaces for this category
-      if (data[i][0]) { // jaguar33
+      if (data[i][0]) { // mustang303
         response += `Link 👉 ${data[i][0]}\n`;
       }
       
-      if (data[i][2]) { // mustang303
+      if (data[i][2]) { // jaguar33
         response += `Link 👉 ${data[i][2]}\n`;
       }
       
@@ -125,10 +125,10 @@ async function generateMarketplaceResponse(marketplace) {
   
   // Determine which column to use
   let colIndex;
-  if (marketplace.toUpperCase() === 'jaguar33') {
-    colIndex = 0; // Column A (index 0) for jaguar33
-  } else if (marketplace.toUpperCase() === 'mustang303') {
-    colIndex = 2; // Column C (index 2) for mustang303
+  if (marketplace.toUpperCase() === 'mustang303') {
+    colIndex = 0; // Column A (index 0) for mustang303
+  } else if (marketplace.toUpperCase() === 'jaguar33') {
+    colIndex = 2; // Column C (index 2) for jaguar33
   } else if (marketplace.toUpperCase() === 'idn33') {
     colIndex = 4; // Column E (index 4) for idn33
   } else if (marketplace.toUpperCase() === 'qqfullbet') {
@@ -164,13 +164,13 @@ bot.help(async (ctx) => {
   ctx.reply(helpMessage);
 });
 
-bot.command('jaguar33', async (ctx) => {
-  const response = await generateMarketplaceResponse('jaguar33');
+bot.command('mustang303', async (ctx) => {
+  const response = await generateMarketplaceResponse('mustang303');
   ctx.reply(response);
 });
 
-bot.command('mustang303', async (ctx) => {
-  const response = await generateMarketplaceResponse('mustang303');
+bot.command('jaguar33', async (ctx) => {
+  const response = await generateMarketplaceResponse('jaguar33');
   ctx.reply(response);
 });
 
