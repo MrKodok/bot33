@@ -60,10 +60,10 @@ async function generateHelpMessage() {
   helpMessage += "/start - Perintah untuk memulai bot.\n";
   
   // Add standard marketplace commands
-  helpMessage += "/MUSTANG303 - Perintah untuk link marketplace MUSTANG303.\n";
-  helpMessage += "/JAGUAR33 - Perintah untuk link marketplace JAGUAR33.\n";
-  helpMessage += "/QQFULLBET - Perintah untuk link marketplace QQFULLBET.\n";
-  helpMessage += "/IDN33 - Perintah untuk link marketplace IDN33.\n";
+  helpMessage += "/mustang303 - Perintah untuk link marketplace mustang303.\n";
+  helpMessage += "/jaguar33 - Perintah untuk link marketplace jaguar33.\n";
+  helpMessage += "/qqfullbet - Perintah untuk link marketplace qqfullbet.\n";
+  helpMessage += "/idn33 - Perintah untuk link marketplace idn33.\n";
   
   return helpMessage;
 }
@@ -90,19 +90,19 @@ async function generateCategoryResponse(category) {
       response += `${count}. ${category.toUpperCase()}\n`;
       
       // Add links from all available marketplaces for this category
-      if (data[i][0]) { // JAGUAR33
+      if (data[i][0]) { // jaguar33
         response += `Link 👉 ${data[i][0]}\n`;
       }
       
-      if (data[i][2]) { // MUSTANG303
+      if (data[i][2]) { // mustang303
         response += `Link 👉 ${data[i][2]}\n`;
       }
       
-      if (data[i][4]) { // IDN33
+      if (data[i][4]) { // idn33
         response += `Link 👉 ${data[i][4]}\n`;
       }
       
-      if (data[i][6]) { // QQFULLBET
+      if (data[i][6]) { // qqfullbet
         response += `Link 👉 ${data[i][6]}\n`;
       }
       
@@ -125,14 +125,14 @@ async function generateMarketplaceResponse(marketplace) {
   
   // Determine which column to use
   let colIndex;
-  if (marketplace.toUpperCase() === 'JAGUAR33') {
-    colIndex = 0; // Column A (index 0) for JAGUAR33
-  } else if (marketplace.toUpperCase() === 'MUSTANG303') {
-    colIndex = 2; // Column C (index 2) for MUSTANG303
-  } else if (marketplace.toUpperCase() === 'IDN33') {
-    colIndex = 4; // Column E (index 4) for IDN33
-  } else if (marketplace.toUpperCase() === 'QQFULLBET') {
-    colIndex = 6; // Column G (index 6) for QQFULLBET
+  if (marketplace.toUpperCase() === 'jaguar33') {
+    colIndex = 0; // Column A (index 0) for jaguar33
+  } else if (marketplace.toUpperCase() === 'mustang303') {
+    colIndex = 2; // Column C (index 2) for mustang303
+  } else if (marketplace.toUpperCase() === 'idn33') {
+    colIndex = 4; // Column E (index 4) for idn33
+  } else if (marketplace.toUpperCase() === 'qqfullbet') {
+    colIndex = 6; // Column G (index 6) for qqfullbet
   } else {
     return "Marketplace tidak ditemukan!";
   }
@@ -164,23 +164,23 @@ bot.help(async (ctx) => {
   ctx.reply(helpMessage);
 });
 
-bot.command('JAGUAR33', async (ctx) => {
-  const response = await generateMarketplaceResponse('JAGUAR33');
+bot.command('jaguar33', async (ctx) => {
+  const response = await generateMarketplaceResponse('jaguar33');
   ctx.reply(response);
 });
 
-bot.command('MUSTANG303', async (ctx) => {
-  const response = await generateMarketplaceResponse('MUSTANG303');
+bot.command('mustang303', async (ctx) => {
+  const response = await generateMarketplaceResponse('mustang303');
   ctx.reply(response);
 });
 
-bot.command('QQFULLBET', async (ctx) => {
-  const response = await generateMarketplaceResponse('QQFULLBET');
+bot.command('qqfullbet', async (ctx) => {
+  const response = await generateMarketplaceResponse('qqfullbet');
   ctx.reply(response);
 });
 
-bot.command('IDN33', async (ctx) => {
-  const response = await generateMarketplaceResponse('IDN33');
+bot.command('idn33', async (ctx) => {
+  const response = await generateMarketplaceResponse('idn33');
   ctx.reply(response);
 });
 
