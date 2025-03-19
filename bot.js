@@ -60,10 +60,10 @@ async function generateHelpMessage() {
   helpMessage += "/start - Perintah untuk memulai bot.\n";
   
   // Add standard marketplace commands
-  helpMessage += "/lazada - Perintah untuk link marketplace Lazada.\n";
-  helpMessage += "/shopee - Perintah untuk link marketplace Shopee.\n";
-  helpMessage += "/tokopedia - Perintah untuk link marketplace Tokopedia.\n";
-  helpMessage += "/zalora - Perintah untuk link marketplace Zalora.\n";
+  helpMessage += "/MUSTANG303 - Perintah untuk link marketplace MUSTANG303.\n";
+  helpMessage += "/JAGUAR33 - Perintah untuk link marketplace JAGUAR33.\n";
+  helpMessage += "/QQFULLBET - Perintah untuk link marketplace QQFULLBET.\n";
+  helpMessage += "/IDN33 - Perintah untuk link marketplace IDN33.\n";
   
   return helpMessage;
 }
@@ -90,19 +90,19 @@ async function generateCategoryResponse(category) {
       response += `${count}. ${category.toUpperCase()}\n`;
       
       // Add links from all available marketplaces for this category
-      if (data[i][0]) { // Shopee
+      if (data[i][0]) { // JAGUAR33
         response += `Link 👉 ${data[i][0]}\n`;
       }
       
-      if (data[i][2]) { // Lazada
+      if (data[i][2]) { // MUSTANG303
         response += `Link 👉 ${data[i][2]}\n`;
       }
       
-      if (data[i][4]) { // Zalora
+      if (data[i][4]) { // IDN33
         response += `Link 👉 ${data[i][4]}\n`;
       }
       
-      if (data[i][6]) { // Tokopedia
+      if (data[i][6]) { // QQFULLBET
         response += `Link 👉 ${data[i][6]}\n`;
       }
       
@@ -125,14 +125,14 @@ async function generateMarketplaceResponse(marketplace) {
   
   // Determine which column to use
   let colIndex;
-  if (marketplace.toUpperCase() === 'SHOPEE') {
-    colIndex = 0; // Column A (index 0) for Shopee
-  } else if (marketplace.toUpperCase() === 'LAZADA') {
-    colIndex = 2; // Column C (index 2) for Lazada
-  } else if (marketplace.toUpperCase() === 'ZALORA') {
-    colIndex = 4; // Column E (index 4) for Zalora
-  } else if (marketplace.toUpperCase() === 'TOKOPEDIA') {
-    colIndex = 6; // Column G (index 6) for Tokopedia
+  if (marketplace.toUpperCase() === 'JAGUAR33') {
+    colIndex = 0; // Column A (index 0) for JAGUAR33
+  } else if (marketplace.toUpperCase() === 'MUSTANG303') {
+    colIndex = 2; // Column C (index 2) for MUSTANG303
+  } else if (marketplace.toUpperCase() === 'IDN33') {
+    colIndex = 4; // Column E (index 4) for IDN33
+  } else if (marketplace.toUpperCase() === 'QQFULLBET') {
+    colIndex = 6; // Column G (index 6) for QQFULLBET
   } else {
     return "Marketplace tidak ditemukan!";
   }
@@ -164,23 +164,23 @@ bot.help(async (ctx) => {
   ctx.reply(helpMessage);
 });
 
-bot.command('shopee', async (ctx) => {
-  const response = await generateMarketplaceResponse('SHOPEE');
+bot.command('JAGUAR33', async (ctx) => {
+  const response = await generateMarketplaceResponse('JAGUAR33');
   ctx.reply(response);
 });
 
-bot.command('lazada', async (ctx) => {
-  const response = await generateMarketplaceResponse('LAZADA');
+bot.command('MUSTANG303', async (ctx) => {
+  const response = await generateMarketplaceResponse('MUSTANG303');
   ctx.reply(response);
 });
 
-bot.command('tokopedia', async (ctx) => {
-  const response = await generateMarketplaceResponse('TOKOPEDIA');
+bot.command('QQFULLBET', async (ctx) => {
+  const response = await generateMarketplaceResponse('QQFULLBET');
   ctx.reply(response);
 });
 
-bot.command('zalora', async (ctx) => {
-  const response = await generateMarketplaceResponse('ZALORA');
+bot.command('IDN33', async (ctx) => {
+  const response = await generateMarketplaceResponse('IDN33');
   ctx.reply(response);
 });
 
